@@ -5,7 +5,7 @@ import SendMessageForm from './components/SendMessageForm'
 import RoomList from './components/RoomList'
 import NewRoomForm from './components/NewRoomForm'
 
-import { tokenUrl, instanceLocator, userId, roomId } from './config'
+import { tokenUrl, instanceLocator, userId, roomId, secretKey } from './config'
 
 class App extends React.Component {
 
@@ -19,6 +19,7 @@ class App extends React.Component {
     componentDidMount() {
         const chatManager = new Chatkit.ChatManager({
             instanceLocator,
+            key: secretKey
             userId: userId,
             tokenProvider: new Chatkit.TokenProvider({
                 url: tokenUrl
